@@ -17,10 +17,10 @@ app.use(express.static('public'));
 var mysql = require('mysql');
 var pool = mysql.createPool({
   connectionLimit : 10,
-  host            : 'classmysql.engr.oregonstate.edu',
-  user            : 'cs290_meehajam',
-  password        : '4470',
-  database        : 'cs290_meehajam',
+  host            : '****************',
+  user            : '****************',
+  password        : '****************',
+  database        : '****************',
   dateStrings	  : true
 });
 
