@@ -1,0 +1,24 @@
+<h1>Update {{workout.name}}:</h1>
+<form id="update-exercise" method="get">
+    Exercise: <input type="text" name="name" value="{{workout.name}}"><br>
+    Reps: <input type="number" name="reps" value="{{workout.reps}}"><br>
+    Weight: <input type="number" name="weight" value="{{workout.weight}}"><br>
+    Date (yyyy-mm-dd): <input type="text" name="date" value="{{workout.date}}"><br>
+    Units: <select name="units" id="units-selector"> 
+    
+	    {{#if workout.lbs}}
+        <option value=1>lbs</option>
+        {{else}}
+        <option value=0>kgs</option>
+        {{/if}}
+        {{#if workout.lbs}}
+        <option value=0>kgs</option>
+        {{else}}
+        <option value=1>lbs</option>
+        {{/if}}
+        
+    </select><br>
+	</select></br>
+	  <input type="hidden" name="id" value="{{workout.id}}">
+</form>
+<button id="updater">Update</button>

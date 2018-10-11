@@ -1,0 +1,39 @@
+
+
+
+
+<h1>Welcome to James's Wacky Workout Tracker</h1>
+
+<table id="table"> 
+	<thead>
+		<th>Exercise</th>
+		<th>Reps</th>
+		<th>Weight</th>
+		<th>Date</th>
+		<th>Units</th>
+	</thead>
+	<tbody>
+	    {{#each workouts}}
+		<tr>
+		<td>{{name}}</td>
+		<td>{{reps}}</td>
+		<td>{{weight}}</td>
+		<td>{{date}}</td>
+		<td>{{#if lbs}}lbs{{else}}kgs{{/if}}</td>
+		<td><a href="/newupdate/{{id}}"><button>Update</button></a></td>
+		<td><input type="button" onclick="deleteExercise({{id}})" value="Delete"></td>
+		</tr>
+	    {{/each}}
+	</tbody>
+	<p>Log a recent exercise routine</p>
+<form id="addRoutine">
+	Exercise: <input type="text" name="name" id="name" required/><br>
+	Reps: <input type="number" name="reps" id="reps"><br>
+	Weight: <input type="number" name="weight" id="weight"><br>
+	Date: <input type="date" name="date" id="date"><br>
+	Units: <select name="units" id="units"> <option value=1>lbs</option>
+		<option value=0>kgs</option>
+	</select><br>
+	<input type="submit" value="Submit" id="addExercise">
+</form>
+</table>
